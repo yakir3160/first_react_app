@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const NewsItem = (props) => {
-    const [addresses,setAddresses] = useState(props.company.addresses||[])
+    const [addresses,setAddresses] = useState([])
 
     return (
         <div className={"row rowItem box text-center"}>

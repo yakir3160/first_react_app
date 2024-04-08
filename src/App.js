@@ -5,12 +5,14 @@ import axios from "axios";
 
 const App = () => {
     const [companies,setCompanies] = useState([])
+    const [addresses,setAddresses] = useState([])
 
     const handleClick = async() => {
         await axios.get("https://fakerapi.it/api/v1/companies?_quantity=10")
             .then(results => {
-                console.log(results.data.data);
                 setCompanies(results.data.data)
+                setAddresses(results.data.data.addresses)
+
             })
             .catch(err => {
                 toast.error(err)
